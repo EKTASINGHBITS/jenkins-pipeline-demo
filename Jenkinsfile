@@ -20,8 +20,20 @@ pipeline {
         stage('Fail Simulation') {
             steps {
                 echo 'This stage will fail...'
-                bat 'exit /b 1'
+                sh 'exit 1' // or use bat on Windows: bat 'exit /b 1'
             }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Pipeline completed successfully!'
+        }
+        failure {
+            echo '❌ Pipeline failed. Please check the logs.'
+        }
+        always {
+            echo '🔁 This runs no matter what. Cleaning up...'
         }
     }
 }
