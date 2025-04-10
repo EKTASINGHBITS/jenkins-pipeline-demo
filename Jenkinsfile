@@ -20,7 +20,7 @@ pipeline {
         stage('Fail Simulation') {
             steps {
                 echo 'This stage will fail...'
-                sh 'exit 1' // or use bat on Windows: bat 'exit /b 1'
+                bat 'exit /b 1'
             }
         }
     }
