@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
+                echo '🔧 Update from feature branch: Jenkinsfile modified'
             }
         }
         stage('Test') {
